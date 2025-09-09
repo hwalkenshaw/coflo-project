@@ -1,0 +1,22 @@
+{
+  "name": "coflo",
+  "private": true,
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "npm run dev:frontend & npm run dev:backend",
+    "dev:frontend": "npm run dev -w frontend",
+    "dev:backend": "dotnet run --project backend/CoFlo.API/CoFlo.API.csproj",
+    "stop:frontend": "powershell \"Get-NetTCPConnection -LocalPort 5173 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }\"",
+    "stop:backend": "powershell \"Get-NetTCPConnection -LocalPort 5000,5001 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }\"",
+    "test:backend": "dotnet test backend/CoFlo.API.Tests/CoFlo.API.Tests.csproj",
+    "build:backend": "dotnet build backend/CoFlo.API/CoFlo.API.csproj",
+    "kill:frontend": "lsof -t -n -i TCP:5173 -sTCP:LISTEN 2>/dev/null | xargs -r kill -TERM || true",
+    "kill:backend": "lsof -t -n -i TCP:5000 -sTCP:LISTEN 2>/dev/null | xargs -r kill -TERM || true",
+    "kill:servers": "npm run -s kill:frontend && npm run -s kill:backend"
+  },
+  "dependencies": {
+    "mcp-remote": "^0.1.29"
+  }
+}

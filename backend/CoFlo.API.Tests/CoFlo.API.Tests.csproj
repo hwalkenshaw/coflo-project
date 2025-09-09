@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="xunit" Version="2.6.6" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.8" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
+    <PackageReference Include="FluentAssertions" Version="6.12.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../CoFlo.API/CoFlo.API.csproj" />
+    <ProjectReference Include="../CoFlo.Domain/CoFlo.Domain.csproj" />
+    <ProjectReference Include="../CoFlo.Application/CoFlo.Application.csproj" />
+    <ProjectReference Include="../CoFlo.Infrastructure/CoFlo.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>
+

@@ -1,0 +1,39 @@
+# BMAD (local only)
+.bmad-core/
+.bmad-*/
+
+# Node / frontend
+node_modules/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+dist/
+.vite/
+.parcel-cache
+coverage/
+.eslintcache
+
+# Vite/Jest caches
+.turbo/
+.cache/
+
+# macOS/Linux
+.DS_Store
+*.swp
+*.swo
+
+# .NET / backend
+bin/
+obj/
+*.user
+*.suo
+*.userprefs
+TestResult*/
+.vs/
+
+# Env files
+.env
+.env*.local
+frontend/templates/
