@@ -60,15 +60,6 @@ cd backend
 dotnet restore
 ```
 
-Update the connection strings in `appsettings.json` if needed:
-```json
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "your-connection-string-here"
-  }
-}
-```
-
 ### 4. Run the Application
 
 For development, you can run both frontend and backend simultaneously:
